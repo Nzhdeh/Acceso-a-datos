@@ -30,7 +30,7 @@ public class GestionContenido extends DefaultHandler
     @Override
     public void startElement(String uri, String nombre, String nombreC, Attributes att)
     {
-        System.out.println("\t< "+nombre +">");
+        //System.out.println("\t< "+nombre +">");
     }
     
     @Override
