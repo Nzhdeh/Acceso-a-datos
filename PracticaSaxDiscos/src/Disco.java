@@ -68,6 +68,6 @@ public class Disco
 	@Override
 	public String toString()
 	{
-		return (getAutor()+" "+getTitulo()+" "+getFormato()+" "+getLocalizacion());
+		return (getAutor()+","+getTitulo()+","+getFormato()+","+getLocalizacion());
 	}
 }
