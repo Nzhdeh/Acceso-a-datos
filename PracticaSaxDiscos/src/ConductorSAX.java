@@ -9,6 +9,6 @@ public class ConductorSAX
 		//String nombreArchivo = "books.xml";
 		String nombreArchivo = "discos.xml";
 		PruebaSAX1 probando = new PruebaSAX1 (nombreArchivo);
-	        probando.andale();
+	    probando.andale();
 	}// Fin main
 } // Fin conductorSAX

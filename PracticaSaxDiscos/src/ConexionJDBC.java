@@ -1,9 +1,10 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ConexionJDBC {
-    //private String sourceURL = "jdbc:sqlserver://localhost";
+   
     private String sourceURL = "jdbc:sqlserver://192.168.0.166";
     private String usuario = "disco";
     private String password = "disco";
@@ -17,19 +18,11 @@ public class ConexionJDBC {
      * Entrada/Salida:
      * Postcondiciones: Devuelve un objeto conexion, que es una conexion con la BBDD abierta.
      * */
-    public Connection getConnection(){
+    public Connection getConnection()
+    {
         Connection conexionBD = null;
         try{
             conexionBD = DriverManager.getConnection(sourceURL, usuario, password);
-
-            //Los buenos tests
-/*
-            if(!conexionBD.isClosed()){
-                System.out.println("La conexion se abrio");
-            }else{
-                System.out.println("La conexion no se abrio");
-            }
-*/
         }catch (SQLException e){
             e.getStackTrace();
         }
@@ -46,24 +39,37 @@ public class ConexionJDBC {
      * Postcondiciones: Asociado al nombre devuelve un boolean que sera true si la conexion recibida se cerro correctamente y false si no.
      *                  La conexion quedara cerrada.
      * */
-    public boolean closeConnection(Connection conexion){
+    public boolean closeConnection(Connection conexion)
+    {
         boolean exito = false;
         try{
             conexion.close();
             if(conexion.isClosed()){
                 exito = true;
             }
-            //Los buenos tests
-/*
-            if(conexion.isClosed()){
-                System.out.println("La conexion se cerro");
-            }else{
-                System.out.println("La conexion no se cerro");
-            }
-*/
         }catch (SQLException e){
             e.getStackTrace();
         }
         return exito;
+    }
+    
+    public int insertarDisco(Connection conexion, Disco disco){
+        int filas = 0;
+        PreparedStatement sentencia = null;
+        String  miOrden = "INSERT INTO Discos VALUES(?,?,?,?)";
+
+        try{
+            sentencia = conexion.prepareStatement(miOrden);
+            sentencia.setString(1, disco.getAutor());
+            sentencia.setString(2, disco.getTitulo());
+            sentencia.setString(3, disco.getFormato());
+            sentencia.setString(4, disco.getLocalizacion());
+            filas = sentencia.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();;
+        }
+
+        return filas;
     }
 }

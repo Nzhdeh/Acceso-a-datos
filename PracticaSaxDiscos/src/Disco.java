@@ -25,43 +25,53 @@ public class Disco
 		this.localizacion=localizacion;
 	}
 
-	public int getId() {
+	public int getId() 
+	{
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(int id) 
+	{
 		this.id = id;
 	}
 
-	public String getAutor() {
+	public String getAutor() 
+	{
 		return autor;
 	}
 
-	public void setAutor(String autor) {
+	public void setAutor(String autor) 
+	{
 		this.autor = autor;
 	}
 
-	public String getTitulo() {
+	public String getTitulo() 
+	{
 		return titulo;
 	}
 
-	public void setTitulo(String titulo) {
+	public void setTitulo(String titulo) 
+	{
 		this.titulo = titulo;
 	}
 
-	public String getFormato() {
+	public String getFormato() 
+	{
 		return formato;
 	}
 
-	public void setFormato(String formato) {
+	public void setFormato(String formato) 
+	{
 		this.formato = formato;
 	}
 
-	public String getLocalizacion() {
+	public String getLocalizacion() 
+	{
 		return localizacion;
 	}
 
-	public void setLocalizacion(String localizacion) {
+	public void setLocalizacion(String localizacion) 
+	{
 		this.localizacion = localizacion;
 	}
 	
