@@ -7,28 +7,28 @@ package pruebas.jabs;
  * @author Leo
  */
 // Derivamos la clase Atomo para añadirle un método que devuelva una cadena con todos los datos del Atomo
-public class AtomoEscribible extends Atomo {
+public class AtomoEscribible extends Persona {
     
-    public AtomoEscribible (Atomo uno){
+    public AtomoEscribible (Persona uno){
         super();
-        this.setEstado(uno.getEstado());
-        this.setDensidad(uno.getDensidad());
+        this.setId(uno.getId());
         this.setNombre(uno.getNombre());
-        this.setNumeroAtomico(uno.getNumeroAtomico());
-        this.setPesoAtomico(uno.getPesoAtomico());
-        this.setPuntoEbullicion(uno.getPuntoEbullicion());
-        this.setSimbolo(uno.getSimbolo());
+        this.setSexo(uno.getSexo());
+        this.setSexoBuscado(uno.getSexoBuscado());
+        this.setFechaNacimiento(uno.getFechaNacimiento());
+        this.setIngresos(uno.getIngresos());
+        this.setPreferencia(uno.getPreferencia());
     }
     // Este es el método
     public String getTodo (){
         String cadAtomo;
+        cadAtomo = "Id: "+this.getId();
         cadAtomo = "Nombre: "+this.getNombre();
-        cadAtomo +="\nSímbolo: "+this.getSimbolo();
-        cadAtomo +="\nNúmero Atómico: "+this.getNumeroAtomico();
-        cadAtomo +="\nPeso atómico: "+this.getPesoAtomico();
-        cadAtomo +="\nEstado: "+this.getEstado();
-        cadAtomo +="\nDensidad: "+this.getDensidad().getValue();
-        cadAtomo +="\nPunto de Ebullición: "+this.getPuntoEbullicion().getUnidad();
+        cadAtomo +="\nSexo: "+this.getSexo();
+        cadAtomo +="\nSexo Buscado: "+this.getSexoBuscado();
+        cadAtomo +="\nFecha de Nacimiento: "+this.getFechaNacimiento();
+        cadAtomo +="\nIngresos: "+this.getIngresos();
+        cadAtomo +="\nPreferencia: "+this.getPreferencia();
         return cadAtomo;
     }
 }
