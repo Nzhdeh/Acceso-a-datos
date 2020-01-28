@@ -13,46 +13,46 @@ import java.util.logging.Logger;
  *
  * @author Leo
  */
-public class ManejadorAtomos {
-    Atomos listaAtomos;
+public class ManejadorPersona {
+	Corazoncitos listaPersonas;
     public void abrirListaAtomosJAXB (File archivoXML){
         JAXBContext contexto;
         try {
-            contexto = JAXBContext.newInstance(Atomos.class);
+            contexto = JAXBContext.newInstance(Corazoncitos.class);
             Unmarshaller u = contexto.createUnmarshaller();
-            listaAtomos = (Atomos) u.unmarshal(archivoXML);
+            listaPersonas = (Corazoncitos) u.unmarshal(archivoXML);
         }catch (Exception ex){
             ex.printStackTrace();
         }
     }
-    public void recorreListaAtomos(){
-        AtomoEscribible atomoTuneao;
-        List<Atomo> miListaAtomos = listaAtomos.getAtomo();
-        for(Atomo unAtomo:miListaAtomos){
-            atomoTuneao = new AtomoEscribible(unAtomo);
+    public void recorreListaPersonas(){
+        PersonaEscribible personaTuneao;
+        List<Persona> miListaPersonas = listaPersonas.getPersona();
+        for(Persona unaPersona:miListaPersonas){
+            personaTuneao = new PersonaEscribible(unaPersona);
             System.out.println("\nSiguiente elemento\n----------------------------------------------");
-            System.out.println(atomoTuneao.getTodo());
+            System.out.println(personaTuneao.getTodo());
         }
     }
-    public void anadirAtomo(Atomo nuevo){
-        listaAtomos.getAtomo().add(nuevo);
+    public void anadirPersona(Persona nuevo){
+        listaPersonas.getPersona().add(nuevo);
     }
-    public void guardarListaAtomos(File archivoXML){
+    public void guardarListaPersonas(File archivoXML){
         JAXBContext contexto;
         try {
-            contexto = JAXBContext.newInstance(Atomos.class);
+            contexto = JAXBContext.newInstance(Corazoncitos.class);
             Marshaller marshalero = contexto.createMarshaller();
             marshalero.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             StringWriter escribiente = new StringWriter();
-            marshalero.marshal(listaAtomos, archivoXML);
+            marshalero.marshal(listaPersonas, archivoXML);
             // ahora lo marshaleamos a un stream para visualizarlo
-            marshalero.marshal(listaAtomos, escribiente);
+            marshalero.marshal(listaPersonas, escribiente);
             System.out.println("-----------------");
             System.out.println("Object2XML:");
             System.out.println(escribiente.toString());
             System.out.println("-----------------");
         } catch (JAXBException ex) {
-            Logger.getLogger(ManejadorAtomos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManejadorPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
