@@ -8,6 +8,8 @@ import javax.xml.bind.*;
 import clases.Corazoncitos;
 import clases.TipoPersona;
 
+import java.util.Arrays;
+import java.util.Collection;
 //import beans.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -39,6 +41,7 @@ public class ManejadorPersona
     {
         PersonaEscribible personaTuneao;
         List<TipoPersona> miListaPersonas = listaPersonas.getPersona();
+        ordenarCorazoncitos();
         for(TipoPersona unaPersona:miListaPersonas){
             personaTuneao = new PersonaEscribible(unaPersona);
             System.out.println("\nSiguiente elemento\n----------------------------------------------");
@@ -103,5 +106,28 @@ public class ManejadorPersona
         } catch (JAXBException ex) {
             Logger.getLogger(ManejadorPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public void ordenarCorazoncitos() 
+    {
+        
+        TipoPersona[] personasArray = new TipoPersona[listaPersonas.getPersona().size()];
+        personasArray = listaPersonas.getPersona().toArray(personasArray);
+        Arrays.sort(personasArray);
+        
+        listaPersonas.getPersona().clear();
+        
+        for(TipoPersona p:personasArray){
+        
+        	listaPersonas.getPersona().add(p);
+        }
+    }
+    
+    public void pintarCorazoncitos() 
+    {
+    	for(TipoPersona persona:listaPersonas.getPersona())
+    	{
+    		System.out.println(persona.toString());
+    	}
     }
 }

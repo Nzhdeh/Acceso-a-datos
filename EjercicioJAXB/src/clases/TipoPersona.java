@@ -74,7 +74,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "ingresos",
     "preferencias"
 })
-public class TipoPersona {
+public class TipoPersona implements Comparable<TipoPersona>{
 
     @XmlElement(name = "ID")
     protected short id;
@@ -388,5 +388,29 @@ public class TipoPersona {
         }
 
     }
+
+    @Override
+    public String toString() 
+    {
+    	return ("ID: "+this.getID()+" Nombre: "+this.getNombre());
+    }
+
+	@Override
+	public int compareTo(TipoPersona o) 
+	{
+		int ret=0;
+		
+		if(this.getID()>o.getID())
+		{
+			ret=1;
+		}else 
+		{
+			if(this.getID()<o.getID())
+			{
+				ret=(-1);
+			}
+		}
+		return ret;
+	}
 
 }

@@ -27,5 +27,7 @@ public class PruebasJAXB {
         mp.aniadirPersona(origen2);
         mp.guardarListaPersonas(destino);
         mp.recorreListaPersonas();
+//        mp.ordenarCorazoncitos();
+//        mp.pintarCorazoncitos();
     }
 }

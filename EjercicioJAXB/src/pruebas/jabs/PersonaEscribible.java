@@ -23,15 +23,10 @@ public class PersonaEscribible extends TipoPersona {
         this.setPreferencias(p.getPreferencias());
     }
     // Este es el metodo
-    public String getTodo (){
-        String cadPersona;
-        cadPersona = "Id: "+this.getID();
-        cadPersona = "Nombre: "+this.getNombre();
-        cadPersona +="\nSexo: "+this.getSexo();
-        cadPersona +="\nSexo Buscado: "+this.getSexoBuscado();
-        cadPersona +="\nFecha de Nacimiento: "+this.getFechaNacimiento();
-        cadPersona +="\nIngresos: "+this.getIngresos();
-        cadPersona +="\nPreferencia: "+this.getPreferencias();
-        return cadPersona;
+    public String getTodo ()
+    {
+        return ("ID: "+this.getID()+"\nNombre: "+this.getNombre()+"\nSexo: "+this.getSexo()+
+        		"\nSexo Buscado: "+this.getSexoBuscado()+"\nFecha de Nacimiento: "+this.getFechaNacimiento()+
+        		"\nIngresos: "+this.getIngresos()+"\nPreferencia: "+this.getPreferencias());
     }
 }
