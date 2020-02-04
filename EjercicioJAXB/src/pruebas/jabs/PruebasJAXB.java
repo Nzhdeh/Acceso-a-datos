@@ -5,12 +5,7 @@
 package pruebas.jabs;
 
 import java.io.File;
-//import beans.*;
 
-/**
- *
- * @author Leo
- */
 public class PruebasJAXB {
 
     /**

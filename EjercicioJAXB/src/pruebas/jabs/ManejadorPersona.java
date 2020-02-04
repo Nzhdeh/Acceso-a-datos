@@ -9,16 +9,10 @@ import clases.Corazoncitos;
 import clases.TipoPersona;
 
 import java.util.Arrays;
-import java.util.Collection;
-//import beans.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Leo
- */
 public class ManejadorPersona 
 {
 	Corazoncitos listaPersonas;
