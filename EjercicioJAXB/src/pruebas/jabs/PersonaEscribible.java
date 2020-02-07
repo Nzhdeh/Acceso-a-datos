@@ -2,12 +2,6 @@ package pruebas.jabs;
 
 import clases.TipoPersona;
 
-//import beans.*;
-
-/**
- *
- * @author Leo
- */
 // Derivamos la clase Atomo para añadirle un método que devuelva una cadena con todos los datos del Atomo
 public class PersonaEscribible extends TipoPersona {
     
