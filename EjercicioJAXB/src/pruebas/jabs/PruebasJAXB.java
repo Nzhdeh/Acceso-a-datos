@@ -8,9 +8,8 @@ import java.io.File;
 
 public class PruebasJAXB {
 
-    /**
-     * @param args the command line arguments
-     */
+
+	
     public static void main(String[] args) {
         ManejadorPersona mp = new ManejadorPersona();
         File origen1 = new File("src\\marcas\\corazonesSolitarios.xml");

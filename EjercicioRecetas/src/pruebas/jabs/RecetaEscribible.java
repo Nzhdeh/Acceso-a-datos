@@ -1,9 +1,9 @@
 package pruebas.jabs;
-
+import clases.*;
 // Derivamos la clase Atomo para añadirle un método que devuelva una cadena con todos los datos del Atomo
-public class PersonaEscribible extends TipoPersona {
+public class RecetaEscribible extends TipoPersona {
     
-    public PersonaEscribible (TipoPersona p){
+    public RecetaEscribible (TipoPersona p){
         super();
         this.setID(p.getID());
         this.setNombre(p.getNombre());
