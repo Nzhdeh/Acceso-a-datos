@@ -66,19 +66,10 @@ public class PruebasJAXB {
          File origen = new File("src\\marcas\\recetas.xml");
          File destino = new File("src\\marcas\\masrecetas.xml");
          
-         //a�adimos la receta al xml recetas
+         
          
          // Cargamos el XML mediante unmarshaling
-         ma.abrirListaAtomosJAXB(origen);
-         // Comprobamos que se ha cargado
-         ma.recorreListaAtomos();
-         // Ahora vamos a añadir otro átomo
-         Atomo nuevoAtomo = new Atomo();
-         nuevoAtomo.setNombre("Mentirio");
-         nuevoAtomo.setSimbolo("Mt");
-         nuevoAtomo.setNumeroAtomico(111);
-         ma.anadirAtomo (nuevoAtomo);
-         // Y generamso un nuevo XML mediante marshaling
-         ma.guardarListaAtomos(destino);
+         ma.abrirListaRecetasJAXB(origen);
+         ma.recorreListaRecetas();
     }
 }
