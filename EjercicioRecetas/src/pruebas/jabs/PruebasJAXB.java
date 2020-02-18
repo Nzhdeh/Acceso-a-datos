@@ -5,11 +5,13 @@
 package pruebas.jabs;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import clases.Medicamento;
 import clases.Medico;
 import clases.Receta;
+import clases.RecetaImpl;
 
 public class PruebasJAXB {
 
@@ -20,6 +22,10 @@ public class PruebasJAXB {
 	
     public static void main(String[] args) 
     {
+    	ManejadorReceta ma = new ManejadorReceta();
+        File origen = new File("src\\marcas\\recetas.xml");
+        File destino = new File("src\\marcas\\masrecetas.xml");
+        
     	
     	 Medico m=new Medico();
     	 m.setNumcol((short) 123);
@@ -49,11 +55,12 @@ public class PruebasJAXB {
     	 ra2.setMedicamento(medAlt2);
     	 ra2.setOrd((byte)2);
     	 
-    	 List<Receta.Alternativo> alternativo = null;
+    	 
+    	 List<Receta.Alternativo> alternativo = new ArrayList<Receta.Alternativo>();
     	 alternativo.add(ra1);
     	 alternativo.add(ra2);
     	 
-    	 Receta r=new Receta();
+    	 RecetaImpl r=new RecetaImpl();
     	 r.setId((byte)3);
     	 r.setTipo("Droga Dura");
     	 r.setMedico(m);
@@ -61,15 +68,10 @@ public class PruebasJAXB {
     	 r.setMedicamento(med);
     	 r.setAlternativo(alternativo);
     	 
-    	 
-    	 ManejadorReceta ma = new ManejadorReceta();
-         File origen = new File("src\\marcas\\recetas.xml");
-         File destino = new File("src\\marcas\\masrecetas.xml");
-         
-         
-         
          // Cargamos el XML mediante unmarshaling
          ma.abrirListaRecetasJAXB(origen);
+         ma.añadirReceta(r);
+         ma.guardarListaRecetas(destino);
          ma.recorreListaRecetas();
     }
 }

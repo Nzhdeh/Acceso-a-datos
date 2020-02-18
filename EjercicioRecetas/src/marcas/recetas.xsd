@@ -7,8 +7,6 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
-    
     <xs:complexType name="receta">
         <xs:sequence>
             <xs:element type="xs:string" name="tipo"/>
@@ -16,32 +14,27 @@
 
             </xs:element>
             <xs:element type="xs:string" name="fecha"/>
-            
             <xs:element name="medicamento"  type="medicamento">
             </xs:element>
-            
-            <xs:element name="alternativo"  type="alternativo" maxOccurs="unbounded" minOccurs="0">
-            </xs:element>
-            
-        </xs:sequence>
-        <xs:attribute type="xs:byte" name="id" use="optional"/>
-    </xs:complexType>
-    
-    <xs:complexType name="alternativo">
-        <xs:sequence>
-            <xs:element name="medicamento">
+            <xs:element name="alternativo" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="nombre"/>
-                        <xs:element type="xs:string" name="laboratorio"/>
-                        <xs:element type="xs:string" name="presentacion"/>
+                        <xs:element name="medicamento">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element type="xs:string" name="nombre"/>
+                                    <xs:element type="xs:string" name="laboratorio"/>
+                                    <xs:element type="xs:string" name="presentacion"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
                     </xs:sequence>
+                    <xs:attribute type="xs:byte" name="ord" use="optional"/>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
-        <xs:attribute type="xs:byte" name="ord" use="optional"/>
+        <xs:attribute type="xs:byte" name="id" use="optional"/>
     </xs:complexType>
-                
     <xs:complexType name="medico">
         <xs:sequence>
             <xs:element type="xs:string" name="nombre"/>
