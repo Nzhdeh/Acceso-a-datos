@@ -4,9 +4,6 @@ import java.util.List;
 
 public class RecetaImpl extends Receta
 {
-
-	@Override
-	re
 	@Override
 	public String getTipo() {
 		// TODO Auto-generated method stub

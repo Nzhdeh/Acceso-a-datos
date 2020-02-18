@@ -72,6 +72,6 @@ public class PruebasJAXB {
          ma.abrirListaRecetasJAXB(origen);
          ma.añadirReceta(r);
          ma.guardarListaRecetas(destino);
-         ma.recorreListaRecetas();
+         //ma.recorreListaRecetas();
     }
 }

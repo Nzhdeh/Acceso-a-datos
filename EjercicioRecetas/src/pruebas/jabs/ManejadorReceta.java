@@ -33,23 +33,23 @@ public class ManejadorReceta
     }
     
     
-    public void recorreListaRecetas()
-    {
-        RecetaEscribible recetaTuneada;
-        List<RecetaImpl> miListaRecetas =  listaRecetas.getReceta();
-
-        for(RecetaImpl unaReceta:miListaRecetas)
-        {
-        	recetaTuneada = new RecetaEscribible(unaReceta);
-            System.out.println("\nSiguiente elemento\n----------------------------------------------");
-            System.out.println(recetaTuneada.getTodo());
-        }
-    }
+//    public void recorreListaRecetas()
+//    {
+//        RecetaEscribible recetaTuneada;
+//        List<RecetaImpl> miListaRecetas =  listaRecetas.getReceta();
+//
+//        for(RecetaImpl unaReceta:miListaRecetas)
+//        {
+//        	recetaTuneada = new RecetaEscribible(unaReceta);
+//            System.out.println("\nSiguiente elemento\n----------------------------------------------");
+//            System.out.println(recetaTuneada.getTodo());
+//        }
+//    }
     
     
-    public void añadirReceta(Receta nuevo)
+    public void añadirReceta(RecetaImpl nuevo)
     {
-    	listaRecetas.getReceta().add(nuevo);
+    	listaRecetas.getReceta().add((Receta)nuevo);
     }
     
     
