@@ -1,108 +1,55 @@
 package clases;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import clases.Receta.Alternativo.Medicamento;
 
 public class RecetaImpl extends Receta
 {
-	@Override
-	public String getTipo() {
-		// TODO Auto-generated method stub
-		return super.getTipo();
-	}
-
-	@Override
-	public void setTipo(String value) {
-		// TODO Auto-generated method stub
-		super.setTipo(value);
-	}
-
-	@Override
-	public Medico getMedico() {
-		// TODO Auto-generated method stub
-		return super.getMedico();
-	}
-
-	@Override
-	public void setMedico(Medico value) {
-		// TODO Auto-generated method stub
-		super.setMedico(value);
-	}
-
-	@Override
-	public String getFecha() {
-		// TODO Auto-generated method stub
-		return super.getFecha();
-	}
-
-	@Override
-	public void setFecha(String value) {
-		// TODO Auto-generated method stub
-		super.setFecha(value);
-	}
-
-	@Override
-	public Medicamento getMedicamento() {
-		// TODO Auto-generated method stub
-		return super.getMedicamento();
-	}
-
-	@Override
-	public void setMedicamento(Medicamento value) {
-		// TODO Auto-generated method stub
-		super.setMedicamento(value);
-	}
-
-	@Override
-	public List<Alternativo> getAlternativo() {
-		// TODO Auto-generated method stub
-		return super.getAlternativo();
-	}
-	
-	public void setAlternativo(List<Alternativo> a)
+	public RecetaImpl() 
 	{
-		this.alternativo=a;
-	}
-
-	@Override
-	public Byte getId() {
-		// TODO Auto-generated method stub
-		return super.getId();
-	}
-
-	@Override
-	public void setId(Byte value) {
-		// TODO Auto-generated method stub
-		super.setId(value);
-	}
-
-	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
-	}
-
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
-		return super.clone();
-	}
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
-
-	@Override
-	protected void finalize() throws Throwable {
-		// TODO Auto-generated method stub
-		super.finalize();
+		super();
 	}
 	
+	public RecetaImpl(String fecha,Byte id,clases.Medicamento medi,Medico medico,String tipo) 
+	{
+		this.alternativo= new ArrayList<Alternativo>();
+		this.fecha=fecha;
+		this.id=id;
+		this.medicamento=medi;
+		this.medico=medico;
+		this.tipo=tipo;
+	}
+	
+	public RecetaImpl(Receta r) 
+	{
+		this.alternativo= r.alternativo;
+		this.fecha=r.fecha;
+		this.id=r.id;
+		this.medicamento=r.medicamento;
+		this.medico=r.medico;
+		this.tipo=r.tipo;
+	}
+	
+	 public String getTodo ()
+	    {
+	        return ("ID: "+this.getId()+"\nFecha: "+this.getFecha().toString()+"\nTipo: "+this.getTipo()+
+	        		"\nMedico: "+this.getMedico().toString()+"\nMedicamiento: "+this.getMedicamento().toString()+
+	        		"\nAlternadivo: "+this.getAlternativo().toString());
+	    }
+	 
+	public void añadirAlternativo(Medicamento m)
+	{
+		this.alternativo.add(new AlternativoImpl(m));
+	}
+
+	public static class AlternativoImpl extends Receta.Alternativo
+	{
+		public AlternativoImpl(Medicamento m)
+		{
+			this.medicamento=m;		
+		}
+	
+	}
 }

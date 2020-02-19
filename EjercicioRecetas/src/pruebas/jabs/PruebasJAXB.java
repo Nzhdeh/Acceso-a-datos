@@ -37,26 +37,26 @@ public class PruebasJAXB {
     	 med.setLaboratorio("IES Nervion");
     	 med.setPresentacion("Pastillas de 40 unidades");
     	 
-    	 Receta.Alternativo.Medicamento medAlt1=new Receta.Alternativo.Medicamento();
+    	 RecetaImpl.Alternativo.Medicamento medAlt1=new RecetaImpl.Alternativo.Medicamento();
     	 med.setNombre("Suspencina");
     	 med.setLaboratorio("IES Nervion");
     	 med.setPresentacion("Una Pastilla");
     	 
-    	 Receta.Alternativo.Medicamento medAlt2=new Receta.Alternativo.Medicamento();
+    	 RecetaImpl.Alternativo.Medicamento medAlt2=new RecetaImpl.Alternativo.Medicamento();
     	 med.setNombre("Repiticina");
     	 med.setLaboratorio("IES Nervion");
     	 med.setPresentacion("Cuatro Pastillas");
     	 
-    	 Receta.Alternativo ra1=new Receta.Alternativo();
+    	 RecetaImpl.Alternativo ra1=new RecetaImpl.Alternativo();
     	 ra1.setMedicamento(medAlt1);
     	 ra1.setOrd((byte)1);
     	 
-    	 Receta.Alternativo ra2=new Receta.Alternativo();
+    	 RecetaImpl.Alternativo ra2=new RecetaImpl.Alternativo();
     	 ra2.setMedicamento(medAlt2);
     	 ra2.setOrd((byte)2);
     	 
     	 
-    	 List<Receta.Alternativo> alternativo = new ArrayList<Receta.Alternativo>();
+    	 List<RecetaImpl.Alternativo> alternativo = new ArrayList<RecetaImpl.Alternativo>();
     	 alternativo.add(ra1);
     	 alternativo.add(ra2);
     	 
@@ -66,12 +66,12 @@ public class PruebasJAXB {
     	 r.setMedico(m);
     	 r.setFecha("11/02/2020");
     	 r.setMedicamento(med);
-    	 r.setAlternativo(alternativo);
+    	 //r.añadirAlternativo(medAlt1);
     	 
          // Cargamos el XML mediante unmarshaling
          ma.abrirListaRecetasJAXB(origen);
          ma.añadirReceta(r);
          ma.guardarListaRecetas(destino);
-         //ma.recorreListaRecetas();
+         ma.recorreListaRecetas();
     }
 }
