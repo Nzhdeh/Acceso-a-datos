@@ -55,9 +55,23 @@
         </medico>
         <fecha>11/02/2020</fecha>
         <medicamento>
-            <nombre>Repiticina</nombre>
+            <nombre>Apruebacina</nombre>
             <laboratorio>IES Nervion</laboratorio>
-            <presentacion>Cuatro Pastillas</presentacion>
+            <presentacion>Pastillas de 40 unidades</presentacion>
         </medicamento>
+        <alternativo ord="1">
+            <medicamento>
+                <nombre>Suspencina</nombre>
+                <laboratorio>IES Nervion</laboratorio>
+                <presentacion>Una Pastilla</presentacion>
+            </medicamento>
+        </alternativo>
+        <alternativo ord="2">
+            <medicamento>
+                <nombre>Repiticina</nombre>
+                <laboratorio>IES Nervion</laboratorio>
+                <presentacion>Cuatro Pastillas</presentacion>
+            </medicamento>
+        </alternativo>
     </receta>
 </recetario>
