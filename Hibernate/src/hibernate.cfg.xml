@@ -6,8 +6,10 @@
     <session-factory name="ConexionHibernate">
         <property name="hibernate.connection.driver_class">com.microsoft.jdbc.sqlserver.SQLServerDriver</property>
         <property name="hibernate.connection.password">ejemplo</property>
-        <property name="hibernate.connection.url">jdbc:microsoft:sqlserver://localhost/Ejemplos</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://107-06;databaseName=Ejemplos</property>
         <property name="hibernate.connection.username">ejemplo</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        
+        <mapping class="clases.Disco"/>
     </session-factory>
 </hibernate-configuration>

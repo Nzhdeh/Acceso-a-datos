@@ -30,9 +30,9 @@ public class Disco implements Serializable
 		this.localizacion = "";
 	}
 	
-	public Disco(int id, String autor, String titulo, String formato, String localizacion) 
+	public Disco( String autor, String titulo, String formato, String localizacion) 
 	{
-		this.id = id;
+		//this.id = id;
 		this.autor = autor;
 		this.titulo = titulo;
 		this.formato = formato;
