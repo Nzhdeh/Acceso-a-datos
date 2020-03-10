@@ -7,7 +7,7 @@ import clases.Seguro;
 
 public class Principal 
 {
-	@SuppressWarnings("deprecation")
+
 	public static void main(String[] args) 
 	{
 		Date d=new Date(2019,3,8);
@@ -15,5 +15,7 @@ public class Principal
 		PersistenciaSeguro ps=new PersistenciaSeguro();
 		
 		ps.insertSeguro(s);
+
 	}
+
 }

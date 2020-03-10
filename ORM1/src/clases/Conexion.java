@@ -21,19 +21,13 @@ public class Conexion
      * Entrada/Salida:
      * Postcondiciones: Devuelve un objeto conexion, que es una conexion con la BBDD abierta.
      * */
-    public Connection getConnection(){
+    public Connection getConnection()
+    {
         Connection conexionBD = null;
-        try{
+        try
+        {
             conexionBD = DriverManager.getConnection(sourceURL, usuario, password);
-
-            //Los buenos tests
-/*
-            if(!conexionBD.isClosed()){
-                System.out.println("La conexion se abrio");
-            }else{
-                System.out.println("La conexion no se abrio");
-            }
-*/
+            
         }catch (SQLException e){
             e.getStackTrace();
         }
@@ -50,21 +44,16 @@ public class Conexion
      * Postcondiciones: Asociado al nombre devuelve un boolean que sera true si la conexion recibida se cerro correctamente y false si no.
      *                  La conexion quedara cerrada.
      * */
-    public boolean closeConnection(Connection conexion){
+    public boolean closeConnection(Connection conexion)
+    {
         boolean exito = false;
-        try{
+        try
+        {
             conexion.close();
-            if(conexion.isClosed()){
+            if(conexion.isClosed())
+            {
                 exito = true;
             }
-            //Los buenos tests
-/*
-            if(conexion.isClosed()){
-                System.out.println("La conexion se cerro");
-            }else{
-                System.out.println("La conexion no se cerro");
-            }
-*/
         }catch (SQLException e){
             e.getStackTrace();
         }
