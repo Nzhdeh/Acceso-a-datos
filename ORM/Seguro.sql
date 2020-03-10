@@ -27,7 +27,8 @@ begin
 	values(@nif,@nombre,@ape1,@ape2,@edad,@numHijos,GETDATE())
 end
 go
-
+execute insertarSeguro '12000000B','Nene','Monroy','Monroe',25,1
+go
 insert into Seguros(nif ,nombre ,ape1 ,ape2 ,edad,numHijos,fechaCreacion)
 values('00000000T','Pepe','Phone','Monroe',25,1,GETDATE())
 
