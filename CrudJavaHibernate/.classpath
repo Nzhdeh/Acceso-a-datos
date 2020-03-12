@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Nzhdeh/Desktop/hibernate3.jar_/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nzhdeh/Desktop/sqljdbc_6.0.8112.200_esn.exe"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/classmate-1.3.0.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/hibernate-commons-annotations-5.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/hibernate-core-5.2.11.Final.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/jboss-logging-3.3.0.Final.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/lucene-core-5.5.4.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/lucene-queryparser-5.5.4.jar"/>
+	<classpathentry kind="lib" path="E:/Git Hub/Acceso-a-datos/CrudJavaHibernate/lib/xml-apis-1.3.03.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
